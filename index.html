@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Special Birthday Surprise 💖</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: linear-gradient(135deg, #ffd6e8, #ffeaf4);
+      overflow-x: hidden;
+      color: #ff5fa2;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .heart {
+      position: fixed;
+      bottom: -20px;
+      color: #ff5fa2;
+      font-size: 20px;
+      animation: floatUp 6s linear infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0) scale(1); opacity: 1; }
+      100% { transform: translateY(-110vh) scale(1.5); opacity: 0; }
+    }
+
+    /* ---------- LOGIN BOX ---------- */
+    #login {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .login-box {
+    background: #fff;
+    padding: 50px 40px;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(255, 95, 162, 0.3);
+    max-width: 500px;
+    min-height: 360px;
+    z-index: 2;
+    }
+
+    .login-box {
+    animation: popIn 0.8s ease;
+    }
+
+    @keyframes popIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+    }
+
+
+    .login-box h1 {
+      color: #ff5fa2;
+      margin-bottom: 10px;
+    }
+
+    .login-box p {
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .login-box input {
+      padding: 10px;
+      width: 100%;
+      border-radius: 10px;
+      border: 1px solid #ffb6d9;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    .btn {
+      background: #ff5fa2;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #ff3f8e;
+    }
+
+    .credit {
+      margin-top: 15px;
+      font-size: 12px;
+      color: #999;
+    }
+
+    /* ---------- MAIN WEBSITE ---------- */
+    section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    h2 {
+      color: #ff5fa2;
+      margin-bottom: 10px;
+    }
+
+    .cake img {
+      width: 200px;
+      margin: 20px 0;
+    }
+
+    .story {
+      max-width: 600px;
+      margin: auto;
+      text-align: left;
+    }
+
+    .story h3::before {
+      content: '💖 ';
+    }
+
+    #timer {
+      font-size: 24px;
+      color: #ff5fa2;
+      margin-bottom: 10px;
+    }
+
+    .reasons li {
+      list-style: none;
+      margin: 10px 0;
+    }
+
+    .reasons li::before {
+      content: '💕 ';
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 10px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .heart-box {
+      font-size: 60px;
+      cursor: pointer;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+
+    .letter {
+      max-width: 600px;
+      margin: 20px auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    .popup {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.4);
+      display: none; 
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+    }
+
+    .popup-box {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      text-align: center;
+    }
+
+    .hero-birthday {
+    background: linear-gradient(135deg, #e0c3fc, #fbc2eb); 
+    padding: 80px 20px;
+    border-radius: 0 0 40px 40px;
+    animation: fadeInUp 1.2s ease;
+    text-align: center;
+    }
+
+    .hero-birthday h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 42px;
+    color: #ffffff; 
+    margin-bottom: 10px;
+    animation: popIn 1s ease;
+    text-shadow: 1px 1px 5px rgba(255,255,255,0.3);
+    }
+
+    .hero-birthday h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 26px;
+    color: #ff5fa2; 
+    margin-bottom: 20px;
+    }
+
+    .birthday-note {
+    font-family: 'Great Vibes', cursive;  
+    font-style: italic;
+    max-width: 700px;
+    margin: auto;
+    font-size: 20px;
+    line-height: 1.8;
+    text-align: center;
+    color: #340749;  
+    animation: fadeInUp 1.5s ease;
+    }
+    .make-wish-section {
+    background: linear-gradient(135deg, #ffd3e2, #ffe5f0); 
+    padding: 80px 20px;
+    text-align: center;
+    border-radius: 40px 40px 0 0;
+    position: relative;
+    }
+
+    .make-wish-section h2 {
+    font-family: 'Pacifico', cursive;
+    font-size: 38px;
+    color: #ff69b4; 
+    margin-bottom: 10px;
+    animation: popIn 1s ease;
+    }
+
+    .make-wish-note {
+    font-family: 'Great Vibes', cursive;
+    font-size: 20px;
+    color: #d084f2; 
+    margin-bottom: 30px;
+    }
+
+    .cake-emoji-container {
+    font-size: 80px; 
+    margin-bottom: 20px;
+    transition: transform 0.5s;
+    }
+
+    .love-story-section {
+    background: linear-gradient(135deg, #e0c3fc, #cdb4ff); 
+    padding: 80px 20px;
+    text-align: center;
+    border-radius: 40px 40px 0 0;
+    position: relative;
+    }
+
+    .love-story-section h2 {
+    font-family: 'Pacifico', cursive;
+    font-size: 38px;
+    color: #ff69b4; 
+    margin-bottom: 40px;
+    animation: popIn 1s ease;
+    }
+
+    .story-item {
+    margin-bottom: 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    padding: 20px;
+    border-left: 4px solid #ff5fa2; 
+    background: rgba(255, 255, 255, 0.25); 
+    border-radius: 20px;
+    animation: fadeInUp 1.2s ease;
+    }
+
+    .story-item h3 {
+    font-family: 'Pacifico', cursive;
+    font-size: 24px;
+    color: #ff4a91;
+    margin-bottom: 8px;
+    }
+
+    .story-item p {
+    font-family: 'Great Vibes', cursive;
+    font-size: 18px;
+    color: #fff; 
+    line-height: 1.6;
+    }
+
+    .love-story-section::after {
+    content: '✨💖🌟';
+    position: absolute;
+    font-size: 25px;
+    top: 10%;
+    left: 15%;
+    animation: floatHearts 6s linear infinite;
+    opacity: 0.3;
+    }
+    .story-item:nth-child(1) { animation-delay: 0.2s; }
+    .story-item:nth-child(2) { animation-delay: 0.4s; }
+    .story-item:nth-child(3) { animation-delay: 0.6s; }
+
+    .time-since-section {
+    background: linear-gradient(135deg, #ffd9e8, #ffe0f0); 
+    padding: 80px 20px;
+    text-align: center;
+    border-radius: 40px 40px 0 0;
+    position: relative;
+    }
+
+    .time-since-section h2 {
+    font-family: 'Pacifico', cursive;
+    font-size: 38px;
+    color: #ff69b4; 
+    margin-bottom: 20px;
+    animation: popIn 1s ease;
+    }
+
+    .time-note {
+    font-family: 'Great Vibes', cursive;
+    font-size: 20px;
+    color: #d084f2; 
+    margin-bottom: 40px;
+    }
+
+    .countdown {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    }
+
+    .time-box {
+    background: rgba(255, 255, 255, 0.7);
+    padding: 25px 20px;
+    border-radius: 20px;
+    min-width: 100px;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .time-box span {
+    display: block;
+    font-size: 36px;
+    color:  #ff1a75; 
+    font-weight: bold;
+    }
+
+    .time-box small {
+    display: block;
+    font-size: 14px;
+    color: #ff8ac4;
+    margin-top: 5px;
+    }
+    .time-since-section::after {
+    content: '💖✨⏳';
+    position: absolute;
+    font-size: 30px;
+    top: 10%;
+    left: 15%;
+    animation: floatHearts 6s linear infinite;
+    opacity: 0.3;
+    }
+    .time-box {
+    animation: fadeInUp 1s ease;
+    }
+    @keyframes fadeInUp {
+    to { opacity: 1; transform: translateY(0); }
+    }
+
+    .reasons-section {
+    background: linear-gradient(135deg, #f8d7ff, #ffd6f0); 
+    padding: 80px 20px;
+    text-align: center;
+    border-radius: 40px 40px 0 0;
+    position: relative;
+    }
+
+    .reasons-section h2 {
+    font-family: 'Pacifico', cursive;
+    font-size: 38px;
+    color: #ff69b4;
+    margin-bottom: 50px;
+    animation: popIn 1s ease;
+    }
+
+    .reasons-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+    max-width: 1000px;
+    margin: 0 auto;
+    }
+
+    .reason-card {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 25px;
+    padding: 25px 20px;
+    font-family: 'Great Vibes', cursive;
+    font-size: 18px;
+    color: #d084f2;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+    }
+
+    .reason-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    .reason-card p {
+    margin-top: 15px;
+    }
+
+    .memories-section {
+    background: linear-gradient(135deg, #ffe6f0, #ffd1e8); 
+    padding: 80px 20px;
+    text-align: center;
+    border-radius: 40px 40px 0 0;
+    }
+
+    .memories-section h2 {
+    font-family: 'Pacifico', cursive;
+    font-size: 38px;
+    color: #ff69b4;
+    margin-bottom: 50px;
+    animation: popIn 1s ease;
+    }
+
+    .memories-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    }
+
+    .memory-card {
+    overflow: hidden;
+    border-radius: 25px;
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .memory-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    }
+
+    .memory-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    .open-heart-section {
+    background: linear-gradient(135deg, #ffd3b6, #edba9f);
+    padding: 80px 20px;
+    text-align: center;
+    border-radius: 40px 40px 0 0;
+    position: relative;
+    overflow: hidden;
+    }
+
+    .open-heart-section h2 {
+    font-family: 'Pacifico', cursive;
+    font-size: 38px;
+    color: #ff69b4;
+    margin-bottom: 15px;
+    }
+
+    .heart-instruction {
+    font-family: 'Great Vibes', cursive;
+    font-size: 20px;
+    color: #d084f2;
+    margin-bottom: 50px;
+    }
+
+    .heart-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+    }
+
+    .clickable-heart {
+    font-size: 120px; 
+    cursor: pointer;
+    display: inline-block;
+    transition: transform 0.2s;
+    animation: heartbeat 1s infinite;
+    }
+
+
+    @keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    25% { transform: scale(1.2); }
+    50% { transform: scale(1.4); }
+    75% { transform: scale(1.2); }
+    }
+
+    .clickable-heart:hover {
+    transform: scale(1.5);
+    }
+
+    .love-letter-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px);
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    }
+
+    .love-letter-content {
+    background: #fff0f8;
+    padding: 50px 40px;
+    border-radius: 30px;
+    max-width: 700px;
+    max-height: 80vh;
+    overflow-y: auto;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    .love-letter-content h3 {
+    font-family: 'Pacifico', cursive;
+    font-size: 28px;
+    color: #ff69b4;
+    margin-bottom: 20px;
+    }
+
+    .love-letter-content p {
+    font-family: 'Great Vibes', cursive;
+    font-size: 20px;
+    color: #d084f2;
+    line-height: 1.6;
+    }
+
+    .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #ff4a91;
+    transition: color 0.3s;
+    }
+
+    .close-btn:hover {
+    color: #ff1a75;
+    }
+
+    .love-forever-section {
+    background: linear-gradient(135deg, #ffd9e8, #ffb6c1); 
+    padding: 80px 20px;
+    text-align: center;
+    border-radius: 40px 40px 0 0;
+    position: relative;
+    overflow: hidden;
+    }
+
+    .love-forever-section h2 {
+    font-family: 'Pacifico', cursive;
+    font-size: 40px;
+    color: #ff1a75;
+    margin-bottom: 20px;
+    }
+
+    .love-note {
+    font-family: 'Great Vibes', cursive;
+    font-size: 20px;
+    color: #ff69b4;
+    margin-bottom: 50px;
+    }
+
+    .clickable-heart-forever {
+    font-size: 120px;
+    cursor: pointer;
+    display: inline-block;
+    transition: transform 0.2s;
+    animation: heartbeat 1s infinite;
+    }
+
+    .clickable-heart-forever:hover {
+    transform: scale(1.5);
+    }
+
+    @keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    25% { transform: scale(1.2); }
+    50% { transform: scale(1.4); }
+    75% { transform: scale(1.2); }
+    }
+
+    .forever-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(6px);
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    }
+
+    .forever-content {
+    background: #fff0f8;
+    padding: 50px 40px;
+    border-radius: 30px;
+    max-width: 700px;
+    max-height: 80vh;
+    overflow-y: auto;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    }
+
+    .forever-content h3 {
+    font-family: 'Pacifico', cursive;
+    font-size: 28px;
+    color: #ff4a91;
+    margin-bottom: 20px;
+    }
+
+    .forever-content p {
+    font-family: 'Great Vibes', cursive;
+    font-size: 20px;
+    color: #d084f2;
+    line-height: 1.6;
+    }
+
+    .forever-content .close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #ff4a91;
+    transition: color 0.3s;
+    }
+
+    .forever-content .close-btn:hover {
+    color: #ff1a75;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div id="login">
+    <div class="login-box">
+      <h1>🎂 Special Surprise 🎂</h1>
+      <p>Enter your birthday to unlock your gift</p>
+      <input type="date" id="dob" />
+      <button class="btn" onclick="unlock()">Unlock My Gift 💝</button>
+      
+      <div class="credit">Created with 💕 by your boyfriend </div>
+    </div>
+  </div>
+
+
+  <div id="main" class="hidden">
+
+    <section class="hero-birthday">
+    <h1>🎉 Happy Birthday, Love! 🎉</h1>
+    <h2>To My Beautiful Girlfriend 💖</h2>
+    <p class="birthday-note">
+        On this special day, I just want you to know how incredibly grateful I am for you.
+        Your smile lights up my world, your love fills my heart, and every moment with you
+        feels like magic ✨
+    </p>
+    </section>
+
+
+    <section class="make-wish-section">
+    <h2>✨🎉 Make a Wish! 💖🎊 </h2>
+    <p class="make-wish-note">Blow out the candle and make this year magical 💖</p>
+    
+    <div class="cake-emoji-container">
+        <span id="candle" class="cake">🎂🕯️</span>
+    </div>
+
+    <button class="btn" id="blowBtn" onclick="blowCandleEmoji()">Blow the Candle 💨</button>
+
+    </section>
+
+    <section class="love-story-section">
+    <h2>💌 Our Love Story</h2>
+    
+    <div class="story-item">
+        <h3>🌸 The First Day</h3>
+        <p>From the first day we met, I knew something magical was starting ✨</p>
+    </div>
+
+    <div class="story-item">
+        <h3>🌹 Growing Together</h3>
+        <p>Every moment together has made our bond stronger and more beautiful 💖</p>
+    </div>
+
+    <div class="story-item">
+        <h3>💫 Forever and Always</h3>
+        <p>I promise to love you endlessly, today, tomorrow, and forever 🌟</p>
+    </div>
+    </section>
+
+
+    <section class="time-since-section">
+    <h2>⏳ Time Since You Said Yes</h2>
+    <p class="time-note">Every second with you has been a blessing 💖</p>
+
+    <div class="countdown" id="countdown">
+        <div class="time-box">
+        <span id="days">0</span>
+        <small>Days</small>
+        </div>
+        <div class="time-box">
+        <span id="hours">0</span>
+        <small>Hours</small>
+        </div>
+        <div class="time-box">
+        <span id="minutes">0</span>
+        <small>Minutes</small>
+        </div>
+        <div class="time-box">
+        <span id="seconds">0</span>
+        <small>Seconds</small>
+        </div>
+    </div>
+    </section>
+
+
+  
+ <section class="reasons-section">
+  <h2>💖 Reasons Why I Love You</h2>
+  
+  <div class="reasons-grid">
+    <div class="reason-card">🌸<p>Your smile lights up my world every day</p></div>
+    <div class="reason-card">💫<p>Your kindness inspires me to be better</p></div>
+    <div class="reason-card">🌹<p>You are my best friend and confidant</p></div>
+    <div class="reason-card">💌<p>Your love makes me feel complete</p></div>
+    <div class="reason-card">✨<p>You have been my support system through the toughest times</p></div>
+    <div class="reason-card">🌷<p>You make every moment special and magical</p></div>
+    <div class="reason-card">🌟<p>You understand me like no one else</p></div>
+    <div class="reason-card">🎀<p>You bring laughter and joy into my life</p></div>
+    <div class="reason-card">💞<p>You make my heart feel at home</p></div>
+    <div class="reason-card">🌼<p>Your hugs make everything better</p></div>
+    <div class="reason-card">🍀<p>You believe in me even when I doubt myself</p></div>
+    <div class="reason-card">🌺<p>Your love makes every day brighter</p></div>
+  </div>
+</section>
+
+<section class="memories-section">
+  <h2>📸 Our Precious Memories</h2>
+  
+  <div class="memories-grid">
+    <div class="memory-card"><img src="mem1.jpeg" alt="Memory 1"></div>
+    <div class="memory-card"><img src="mem2.jpeg" alt="Memory 2"></div>
+    <div class="memory-card"><img src="mem3.jpeg" alt="Memory 3"></div>
+    <div class="memory-card"><img src="mem4.jpeg" alt="Memory 4"></div>
+    <div class="memory-card"><img src="mem5.jpeg" alt="Memory 5"></div>
+    <div class="memory-card"><img src="mem6.jpeg" alt="Memory 6"></div>
+    <div class="memory-card"><img src="mem7.jpeg" alt="Memory 7"></div>
+    <div class="memory-card"><img src="mem8.jpeg" alt="Memory 8"></div>
+    <div class="memory-card"><img src="mem9.jpeg" alt="Memory 9"></div>
+  </div>
+</section>
+
+  <section class="open-heart-section">
+  <h2>💌 Open My Heart</h2>
+  <p class="heart-instruction">Click the heart to open my love letter 💖</p>
+
+  <div class="heart-container">
+  <span class="clickable-heart" id="heart">❤️</span>
+</div>
+
+
+  <div class="love-letter-popup" id="loveLetterPopup">
+    <div class="love-letter-content">
+      <span class="close-btn" id="closeLetter">&times;</span>
+      <h3>My Dearest Love,</h3>
+      <p>
+        From the moment you came into my life, everything changed for the better.  
+        You have been my rock, my safe place, and my greatest source of strength.  
+        In the moments when life felt overwhelming and challenges seemed endless,  
+        your love and support lifted me up, gave me hope, and reminded me that I am never alone.  
+
+        I am endlessly grateful for your patience, understanding, and the countless ways  
+        you show your love every single day. Your smile brightens my darkest days,  
+        your laughter fills my heart with joy, and your gentle words give me comfort  
+        when I need it the most.  
+        </p>
+        <p>
+        I cherish every memory we’ve created together — every smile, every hug, every shared dream.  
+        You make my world magical, and you inspire me to be a better person just by being yourself.  
+
+        Thank you for being my strength, my confidant, my best friend,  
+        and my one true love. I promise to love you endlessly,  
+        to support you in every way I can, and to make you feel as special as you make me feel.  
+
+        Every day with you is a blessing, every moment a treasure,  
+        and I look forward to a lifetime of love, laughter, and happiness by your side. 💖  
+
+        I love you more than words can ever express, and I will forever be grateful for you.  
+        Forever and always, you are my everything.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+
+    <section class="love-forever-section">
+  <h2>💖 I Love You Forever 💖</h2>
+  <p class="love-note">Click the heart to see a special message just for you 💌</p>
+
+  <div class="heart-container">
+    <span class="clickable-heart-forever" id="foreverHeart">💘</span>
+  </div>
+
+
+  <div class="forever-popup" id="foreverPopup">
+    <div class="forever-content">
+      <span class="close-btn" id="closeForever">&times;</span>
+      <h3>💖 You Are Loved Today 💖</h3>
+      <p>
+        My love, I want you to know that today, tomorrow, and always,  
+        you are the most precious person in my life. 💕  
+        Every smile of yours brightens my day,  
+        every hug fills my heart with warmth,  
+        and every moment with you is a blessing. 🌸  
+
+        I love you endlessly, with all my heart,  
+        today, tomorrow, and for all the days to come. 💖  
+        You make my life magical, and I am forever grateful for you. 🌹✨
+      </p>
+    </div>
+  </div>
+</section>
+
+
+  <script>
+    // hearts
+    setInterval(() => {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.innerText = '❤';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = (4 + Math.random() * 4) + 's';
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 6000);
+    }, 300);
+
+    function unlock() {
+      const dob = document.getElementById('dob').value;
+      if (dob === '2002-01-04') {
+        document.getElementById('login').style.display = 'none';
+        document.getElementById('main').classList.remove('hidden');
+      } else {
+        alert('Oops! That’s not the correct birthday 💔');
+      }
+    }
+
+    function blowCandleEmoji() {
+    // 1️⃣ Get the cake emoji element
+    const candle = document.getElementById('candle');
+    
+    // 2️⃣ Remove the candle emoji (blown out)
+    if (candle) {
+        candle.textContent = "🎂"; // only cake emoji remains
+        candle.style.transform = "scale(1.05) rotate(-2deg)"; // subtle pop effect
+    }
+
+    // 3️⃣ Get the button element
+    const btn = document.getElementById('blowBtn');
+    
+    // 4️⃣ Change button text and disable it
+    if (btn) {
+        btn.textContent = "Wish Made 🎉";
+        btn.disabled = true; // optional: prevent clicking again
+        btn.style.background = "#ffb6c1";
+        btn.style.cursor = "default"; // optional: make cursor normal
+    }
+    }
+
+
+
+
+    function toggleLetter() {
+      document.getElementById('letter').classList.toggle('hidden');
+    }
+
+    function showPopup() {
+      document.getElementById('popup').style.display = 'flex';
+    }
+
+    function hidePopup() {
+      document.getElementById('popup').style.display = 'none';
+    }
+
+    // timer
+    const startDate = new Date('2020-01-01'); // change this
+    setInterval(() => {
+      const now = new Date();
+      const diff = now - startDate;
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      document.getElementById('timer').innerText = days + ' Days Together ❤️';
+    }, 1000);
+    // Set the date you became official
+    const anniversaryDate = new Date("2025-12-01T03:30:50"); // YYYY-MM-DD format
+
+    function updateCountdown() {
+    const now = new Date();
+    const diff = now - anniversaryDate; // difference in milliseconds
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+
+    document.getElementById("days").textContent = days;
+    document.getElementById("hours").textContent = hours;
+    document.getElementById("minutes").textContent = minutes;
+    document.getElementById("seconds").textContent = seconds;
+    }
+
+    // Update every second
+    setInterval(updateCountdown, 1000);
+    updateCountdown(); // call once immediately
+
+    const heart = document.getElementById("heart");
+const loveLetterPopup = document.getElementById("loveLetterPopup");
+const closeLetter = document.getElementById("closeLetter");
+
+// Open love letter
+heart.addEventListener("click", () => {
+  loveLetterPopup.style.display = "flex";
+});
+
+// Close love letter
+closeLetter.addEventListener("click", () => {
+  loveLetterPopup.style.display = "none";
+});
+
+// Close when clicking outside
+loveLetterPopup.addEventListener("click", (e) => {
+  if (e.target === loveLetterPopup) {
+    loveLetterPopup.style.display = "none";
+  }
+});
+
+const foreverHeart = document.getElementById("foreverHeart");
+const foreverPopup = document.getElementById("foreverPopup");
+const closeForever = document.getElementById("closeForever");
+
+// Open popup
+foreverHeart.addEventListener("click", () => {
+  foreverPopup.style.display = "flex";
+});
+
+// Close popup
+closeForever.addEventListener("click", () => {
+  foreverPopup.style.display = "none";
+});
+
+// Close when clicking outside content
+foreverPopup.addEventListener("click", (e) => {
+  if (e.target === foreverPopup) {
+    foreverPopup.style.display = "none";
+  }
+});
+
+
+  </script>
+
+
+</body>
+</html>
